@@ -36,7 +36,7 @@ Implementa 'get_element_from_list(items_list, index)' que rebi una llista
 i un índex, i retorneu l'element de la llista corresponent a l'índex. Si
 l'índex està fora del rang de la llista, la funció ha de retornar "The
 specified index is out of the list's range". En cas d'un error inesperat, ha
-de retornar "An unexpected error has passat: {error}".
+de retornar "An unexpected error has occurred: {error}".
 
 Paràmetres:
 items_list (List): Llista de la qual voleu obtenir l'element.
@@ -50,17 +50,22 @@ Exemple:
      Resultat:
      - En el primer cas el resultat és: "Notebook"
      - En el segon cas, el resultat és: "L'específic index és de la llista d'articles_list"
-     - En cas d'un error inesperat, ha de retornar: "An unexpected error has passat: {error}"
+     - En cas d'un error inesperat, ha de retornar: "An unexpected error has occurred: {error}"
 """
 
 
 def get_element_from_list(items_list, index) -> str:
-    # Write here your code
-    pass
+    try:
+        return items_list[index]
+    except IndexError:
+        return "The specified index is out of the items_list's range"
+    except Exception as e:
+        return f'An unexpected error has occurred: {e}'
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 
 # print(get_element_from_list(["Pencil", "Pen", "Eraser", "Notebook", "Ruler"], 3))
+
 # print(get_element_from_list(["Pencil", "Pen", "Eraser", "Notebook", "Ruler"], 5))
