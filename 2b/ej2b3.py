@@ -47,10 +47,15 @@ Exemple:
 """
 
 
-def triangle_area_calculate(
-    base, height):
-    # Write here your code
-    pass
+def triangle_area_calculate(base, height):
+    # comprobamos si el valor de la base es superior a 0
+    if base <= 0:
+        raise ValueError('El valor de la base ha de ser un numero positivo')
+    # comprobamos si el valor de la Altura es superior a 0
+    if height <= 0:
+        raise ValueError()
+
+    return (base * height) / 2
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta
@@ -58,5 +63,6 @@ def triangle_area_calculate(
 
 # Si vols provar el teu codi, descomenta les línies següents i executa
 # l'scrip
+
 
 # print(triangle_area_calculate(33, 45))
