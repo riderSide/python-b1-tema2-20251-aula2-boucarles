@@ -51,17 +51,23 @@ Exemples:
 """
 
 
-def division_list(list_numbers: List, number: int) -> List[float]:
+def division_list(list_numbers: List, scalar_number: int) -> List[float]:
+    # Comprovació que scalar_number no sigui = 0
+    if scalar_number == 0 :
+        raise ValueError("El valor de scalar_number no pot ser igual a 0")
+    if not isinstance(scalar_number, (int,float)):
+        raise ValueError("scalar_number ha de ser un eneter o un float")
+
     result = []
     for number_in_list in list_numbers:
-        if not isinstance(number_in_list, str):
-            raise IndexError(f"Value {number_in_list} is not numeric.")
-        result.append(number_in_list)
+        if not isinstance(number_in_list, (int, float)):
+            TypeError(f"Value {number_in_list} is not numeric.")
+        result.append(number_in_list / scalar_number)
     return result
 
 
-list_numbers = [1.5, 2.5, "9.2", 0, 22]
-scalar_number = "4.0"
+list_numbers = [1.5, 2.5, 9.2, 0, 22]
+scalar_number = 4.0
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
