@@ -49,8 +49,15 @@ Exemple:
 
 
 def kg_to_lb(kg):
-    # Write here your code
-    pass
+    # comprovem si es numéric
+    if not isinstance(kg, (int, float)):
+        raise TypeError("El valor introduít ha de ser numéric.")
+    
+    # si es major que 0
+    if kg <= 0:
+        raise ValueError("El valor no pot ser igual o inferior a 0.")
+    
+    return kg * 2.20
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
