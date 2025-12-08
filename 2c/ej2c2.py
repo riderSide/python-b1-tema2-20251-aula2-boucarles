@@ -49,7 +49,7 @@ Exemple:
     
      Resultat:
      - En el primer cas el resultat és: "Notebook"
-     - En el segon cas, el resultat és: "L'específic index és de la llista d'articles_list"
+     - En el segon cas, el resultat és: "The specified index is out of the items_list's range"
      - En cas d'un error inesperat, ha de retornar: "An unexpected error has occurred: {error}"
 """
 
